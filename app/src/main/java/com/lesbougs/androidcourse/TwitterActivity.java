@@ -7,16 +7,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.lesbougs.androidcourse.async.RetrieveTweetsAsyncTask;
+import com.lesbougs.androidcourse.interfaces.TweetListener;
+import com.lesbougs.androidcourse.pojo.Tweet;
+import com.lesbougs.androidcourse.ui.fragments.TweetsFragment;
 import com.lesbougs.androidcourse.utils.Constants;
 import com.lesbougs.androidcourse.utils.PreferenceUtils;
 
-public class TwitterActivity extends AppCompatActivity {
+public class TwitterActivity extends AppCompatActivity implements TweetListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_twitter);
 
         final Intent intent = getIntent();
         if(intent != null) {
@@ -25,6 +30,10 @@ public class TwitterActivity extends AppCompatActivity {
                 final String login = extras.getString(Constants.Login.EXTRA_LOGIN);
                 getSupportActionBar().setSubtitle(login);//getActionBar avec extends Activity
             }
+        }
+
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
         }
     }
 
@@ -46,5 +55,15 @@ public class TwitterActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRetweet(Tweet tweet) {
+        Toast.makeText(this, "OnRetweet : " + tweet.text, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onViewTweet(Tweet tweet) {
+        Toast.makeText(this, "View : " + tweet.text, Toast.LENGTH_LONG).show();
     }
 }
