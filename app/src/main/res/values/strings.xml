@@ -20,6 +20,7 @@
     <string name="tweet_list_item_button_text">RT</string>
 
     <!-- TWEET -->
+    <string name="description_author">author profile picture</string>
     <string name="tweet_reply">reply</string>
     <string name="tweet_retweet">retweet</string>
     <string name="tweet_star">star</string>

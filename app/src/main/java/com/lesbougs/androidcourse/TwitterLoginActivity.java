@@ -14,7 +14,7 @@ import com.lesbougs.androidcourse.utils.Constants;
 import com.lesbougs.androidcourse.utils.PreferenceUtils;
 
 public class TwitterLoginActivity extends Activity implements View.OnClickListener {
-    private EditText mLoginEditText; //m (convention) : donnée membre
+    private EditText mLoginEditText; //m (convention) : donnée membre (distingue attribut de variable locale)
     private EditText mPasswordEditText;
 
     @Override
