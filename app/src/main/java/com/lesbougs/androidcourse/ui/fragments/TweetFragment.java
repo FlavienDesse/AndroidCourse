@@ -97,18 +97,18 @@ public class TweetFragment extends Fragment {
 
         mReturnButton = (Button) view.findViewById(R.id.tweetExitButton);
         mReturnButton.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "retour à la liste", LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "retour à la liste", LENGTH_SHORT).show();//tmp
             //stuff
         });
 
         ((Button) view.findViewById(R.id.tweetReplyButton)).setOnClickListener(v -> {
-            Toast.makeText(getContext(), "réponse", LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.tweet_reply, LENGTH_SHORT).show();
         });
         ((Button) view.findViewById(R.id.tweetRetweetButton)).setOnClickListener(v -> {
-            Toast.makeText(getContext(), "retweet", LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.tweet_retweet, LENGTH_SHORT).show();
         });
         ((Button) view.findViewById(R.id.tweetStarButton)).setOnClickListener(v -> {
-            Toast.makeText(getContext(), "favori", LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.tweet_star, LENGTH_SHORT).show();
         });
 
         return view;
