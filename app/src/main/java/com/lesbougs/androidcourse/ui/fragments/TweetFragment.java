@@ -1,17 +1,26 @@
 package com.lesbougs.androidcourse.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lesbougs.androidcourse.R;
+import com.lesbougs.androidcourse.TwitterActivity;
+import com.lesbougs.androidcourse.TwitterApplication;
+import com.lesbougs.androidcourse.utils.Constants;
 import com.squareup.picasso.Picasso;
+
+import static android.widget.Toast.*;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +41,8 @@ public class TweetFragment extends Fragment {
     private String mAlias;
     private String mText;
     private String mUrl;
+
+    private Button mReturnButton;
 
     public TweetFragment() {
         // Required empty public constructor
@@ -83,6 +94,22 @@ public class TweetFragment extends Fragment {
         if (!mUrl.isEmpty()) {
             Picasso.get().load(mUrl).fit().into((ImageView) view.findViewById(R.id.tweetImageView));
         }
+
+        mReturnButton = (Button) view.findViewById(R.id.tweetExitButton);
+        mReturnButton.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "retour à la liste", LENGTH_SHORT).show();
+            //stuff
+        });
+
+        ((Button) view.findViewById(R.id.tweetReplyButton)).setOnClickListener(v -> {
+            Toast.makeText(getContext(), "réponse", LENGTH_SHORT).show();
+        });
+        ((Button) view.findViewById(R.id.tweetRetweetButton)).setOnClickListener(v -> {
+            Toast.makeText(getContext(), "retweet", LENGTH_SHORT).show();
+        });
+        ((Button) view.findViewById(R.id.tweetStarButton)).setOnClickListener(v -> {
+            Toast.makeText(getContext(), "favori", LENGTH_SHORT).show();
+        });
 
         return view;
     }

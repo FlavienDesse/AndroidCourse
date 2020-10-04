@@ -105,8 +105,6 @@ public class TweetsFragment extends Fragment implements TweetChangeListener, Ada
             for (Tweet tweet : tweets) {
                 //System.out.println(TwitterActivity.class.getName() + tweet.text);//interdit en déploiement
                 Log.d(TwitterActivity.class.getName(), tweet.text);//plus correct. d pour débug
-
-                //appliquer ici le layout à chaque tweet?
             }
         }
     }
