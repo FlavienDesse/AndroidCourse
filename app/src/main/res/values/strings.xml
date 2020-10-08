@@ -24,6 +24,7 @@
     <string name="tweet_reply">reply</string>
     <string name="tweet_retweet">retweet</string>
     <string name="tweet_star">star</string>
+    <string name="tweet_exit">back</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

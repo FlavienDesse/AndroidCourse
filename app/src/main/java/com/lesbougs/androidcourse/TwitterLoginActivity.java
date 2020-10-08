@@ -30,23 +30,21 @@ public class TwitterLoginActivity extends Activity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        {
-            Boolean loginData = TextUtils.isEmpty(mLoginEditText.getText());
-            Boolean passwordData = TextUtils.isEmpty(mPasswordEditText.getText());
+        Boolean loginData = TextUtils.isEmpty(mLoginEditText.getText());
+        Boolean passwordData = TextUtils.isEmpty(mPasswordEditText.getText());
 
-            if (loginData && passwordData) {//+complet
-                final String errMsg = getResources().getString(R.string.error_no_login) + "\n" + getResources().getString(R.string.error_no_password);
-                Toast.makeText(this, errMsg, Toast.LENGTH_LONG).show();
-                return;
-            }
-            else if (passwordData) {//+probable
-                Toast.makeText(this, R.string.error_no_password, Toast.LENGTH_LONG).show();
-                return;
-            }
-            else if (loginData) {
-                Toast.makeText(this, R.string.error_no_login, Toast.LENGTH_LONG).show();
-                return;
-            }
+        if (loginData && passwordData) {//+complet
+            final String errMsg = getResources().getString(R.string.error_no_login) + "\n" + getResources().getString(R.string.error_no_password);
+            Toast.makeText(this, errMsg, Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (passwordData) {//+probable
+            Toast.makeText(this, R.string.error_no_password, Toast.LENGTH_LONG).show();
+            return;
+        }
+        else if (loginData) {
+            Toast.makeText(this, R.string.error_no_login, Toast.LENGTH_LONG).show();
+            return;
         }
 
         String login = mLoginEditText.getText().toString();
