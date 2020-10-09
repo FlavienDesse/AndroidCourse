@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.lesbougs.androidcourse.interfaces.TweetListener;
 import com.lesbougs.androidcourse.pojo.Tweet;
 import com.lesbougs.androidcourse.ui.fragments.TweetFragment;
-import com.lesbougs.androidcourse.ui.fragments.TweetsFragment;
 import com.lesbougs.androidcourse.utils.Constants;
 import com.lesbougs.androidcourse.utils.PreferenceUtils;
 
@@ -32,7 +31,8 @@ public class TwitterActivity extends AppCompatActivity implements TweetListener 
             }
         }
         if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.container, new TweetFragment()).commit();
+
         }
     }
 
@@ -63,8 +63,6 @@ public class TwitterActivity extends AppCompatActivity implements TweetListener 
 
     @Override
     public void onViewTweet(Tweet tweet) {
-        //Toast.makeText(this, "View : " + tweet.text, Toast.LENGTH_LONG).show();
-        final TweetFragment fragment = TweetFragment.newInstance(tweet.user.name, tweet.user.screenName, tweet.text, tweet.user.profileImageUrl);
-        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).commit(); //affiche ce fragment
+        Toast.makeText(this, "View : " + tweet.text, Toast.LENGTH_LONG).show();
     }
 }

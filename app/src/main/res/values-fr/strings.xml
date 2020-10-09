@@ -21,10 +21,9 @@
 
     <!-- TWEET -->
     <string name="description_author">photo de profil de l\'auteur</string>
-    <string name="tweet_reply">répondre</string>
-    <string name="tweet_retweet">partager</string>
+    <string name="tweet_reply">réponse</string>
+    <string name="tweet_retweet">retweet</string>
     <string name="tweet_star">favori</string>
-    <string name="tweet_exit">retour</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
