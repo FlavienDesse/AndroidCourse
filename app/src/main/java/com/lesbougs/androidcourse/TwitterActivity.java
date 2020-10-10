@@ -65,6 +65,8 @@ public class TwitterActivity extends AppCompatActivity implements TweetListener 
     public void onViewTweet(Tweet tweet) {
         //Toast.makeText(this, "View : " + tweet.text, Toast.LENGTH_LONG).show();
         final TweetFragment fragment = TweetFragment.newInstance(tweet.user.name, tweet.user.screenName, tweet.text, tweet.user.profileImageUrl);
-        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment).commit(); //affiche ce fragment
+        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment)
+                .addToBackStack(null)
+                .commit(); //affiche ce fragment
     }
 }
