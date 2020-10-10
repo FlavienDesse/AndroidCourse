@@ -98,7 +98,8 @@ public class TweetFragment extends Fragment {
         mReturnButton = (Button) view.findViewById(R.id.tweetExitButton);
         mReturnButton.setOnClickListener(v -> {
             Toast.makeText(getContext(), "retour à la liste", LENGTH_SHORT).show();//tmp
-            //stuff
+
+            getActivity().getSupportFragmentManager().popBackStack();
         });
 
         ((Button) view.findViewById(R.id.tweetReplyButton)).setOnClickListener(v -> {
